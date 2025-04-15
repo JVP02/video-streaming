@@ -53,23 +53,28 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Video</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/comp.css">
 </head>
 <body>
-    <h1>Upload Video</h1>
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br><br>
+    <?php include 'comp/header.php'; ?>
 
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea><br><br>
+    <main>
+        <h1>Upload Video</h1>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
 
-        <label for="thumbnail">Thumbnail:</label>
-        <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required><br><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br><br>
 
-        <label for="video">Video:</label>
-        <input type="file" id="video" name="video" accept="video/*" required><br><br>
+            <label for="thumbnail">Thumbnail:</label>
+            <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required><br><br>
 
-        <button type="submit">Upload</button>
-    </form>
+            <label for="video">Video:</label>
+            <input type="file" id="video" name="video" accept="video/*" required><br><br>
+
+            <button type="submit">Upload</button>
+        </form>
+    </main>
 </body>
 </html>
