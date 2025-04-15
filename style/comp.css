@@ -1,0 +1,58 @@
+:root {
+    --font-color: #DCA06D;
+    --small-font-size: 16px;
+
+    --color-primary: #210F37;
+    --color-secondary: #4F1C51;
+    --color-accent: #A55B4B;
+    --color-background: #ecf0f1;
+    
+    --white: #ffffff;
+    --black: #000000;
+
+    --small-padding: 5px;
+    --medium-padding: 10px;
+    --large-padding: 20px;
+
+    --small-gap: 5px;
+    --medium-gap: 10px;
+    --large-gap: 20px;
+
+    --small-radius: 5px;
+    --medium-radius: 10px;
+    --large-radius: 20px;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--white);
+    padding: var(--medium-padding);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--small-radius);
+
+    align-items: justify;
+    text-align: center;
+}
+
+.btn-secondary {
+    background-color: var(--color-background);
+    color: var(--color-accent);
+    padding: var(--medium-padding);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--small-radius);
+
+    align-items: justify;
+    text-align: center;
+}
+
+.btn-tertiary {
+    background-color: var(--white);
+    color: var(--white);
+    padding: var(--small-padding);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--small-radius);
+
+    align-items: left;
+    text-align: center;
+}
+

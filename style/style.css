@@ -1,0 +1,254 @@
+:root {
+    --font-color: #DCA06D;
+    --small-font-size: 16px;
+
+    --color-primary: #210F37;
+    --color-secondary: #4F1C51;
+    --color-accent: #A55B4B;
+    --color-background: #ecf0f1;
+    
+    --white: #ffffff;
+    --black: #000000;
+
+    --small-padding: 5px;
+    --medium-padding: 10px;
+    --large-padding: 20px;
+
+    --small-gap: 5px;
+    --medium-gap: 10px;
+    --large-gap: 20px;
+
+    --small-radius: 5px;
+    --medium-radius: 10px;
+    --large-radius: 20px;
+}
+
+/* HEADER STYLE =========================================================================*/
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    width: 100%;
+    /* height: 100px; */
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--medium-padding);
+}
+.logo-img{
+    width: 75px;
+    height: 75px;
+    padding: var(--small-padding);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: var(--medium-gap);
+}
+
+.header-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    gap: var(--large-gap);
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: var(--small-font-size);
+    transition: var(--color-accent) 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: var(--color-accent);
+}
+
+.search-cont {
+    display: flex; /* Ensure proper alignment */
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--small-gap); /* Add spacing above the search bar */
+}
+
+.search-bar {
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+    border: solid 1px var(--color-secondary);
+    padding: var(--small-padding);
+}
+
+.search-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: var(--small-gap);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+/* SIDEBAR STYLE =========================================================================*/
+.sidebar {
+    top: 100px;
+    width: 250px; /* Set the width of the sidebar */
+    height: 100vh; /* Full height */
+    background-color: var(--color-primary); /* Sidebar background color */
+    color: var(--white); /* Text color */
+    position: fixed; /* Fix the sidebar to the left */
+    /* top: 0; */
+    left: 0;
+    padding: var(--medium-padding);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+    transition: width 0.3s ease; /* Smooth transition for width change */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.sidebar.collapsed {
+    width: 60px; /* Collapsed width */
+}
+
+.sidebar-menu {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    display: flex;
+    /* width: 100%; */
+    align-items: center;
+    padding: var(--medium-padding);
+    margin-bottom: var(--medium-gap);
+
+    border-radius: var(--large-radius);
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    text-decoration: none;
+    color: var(--white);
+    font-size: var(--small-font-size);
+    transition: color 0.3s ease;
+
+
+}
+
+.sidebar-menu li:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-accent);
+
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--medium-gap);
+}
+
+.menu-text {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar.collapsed .menu-text {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    overflow: hidden;
+}
+
+/* MAIN STYLE =========================================================================*/
+main {
+    transition: margin-left 0.3s ease; /* Smooth transition for margin adjustment */
+    margin-left: 250px; /* Default margin when sidebar is expanded */
+    padding: var(--large-padding);
+}
+
+main.sidebar-collapsed {
+    margin-left: 60px; /* Adjust margin when sidebar is collapsed */
+}
+
+main.sidebar-expanded {
+    margin-left: 250px; /* Adjust margin when sidebar is expanded */
+}
+
+.video-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible columns for responsiveness */
+    gap: var(--large-gap); /* Space between video cards */
+    padding: var(--large-padding); /* Padding around the section */
+    justify-content: center; /* Center the grid */
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    background-color: var(--color-background);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--medium-radius); /* Smooth corners */
+    overflow: hidden; /* Clip overflowing content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+.video-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.video-thumbnail {
+    width: 100%; /* Full width of the card */
+    height: 150px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensure the image fits well */
+}
+
+.video-details {
+    display: flex;
+    flex-direction: column;
+    padding: var(--medium-padding); /* Padding inside the card */
+}
+
+.video-title {
+    font-size: 16px; /* Modern font size */
+    font-weight: bold; /* Highlight the title */
+    margin-bottom: var(--small-gap); /* Space below the title */
+    color: var(--color-primary); /* Use primary color for the title */
+    line-height: 1.4; /* Improve readability */
+    text-overflow: ellipsis; /* Truncate long titles */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.video-description {
+    font-size: 14px; /* Smaller font for description */
+    color: var(--font-color);
+    line-height: 1.5; /* Improve readability */
+    text-overflow: ellipsis; /* Truncate long descriptions */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.video-meta {
+    display: flex;
+    justify-content: space-between; /* Align metadata items */
+    margin-top: var(--small-gap); /* Space above metadata */
+    font-size: 12px; /* Smaller font for metadata */
+    color: var(--color-secondary);
+}
